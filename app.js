@@ -1,14 +1,5 @@
 let amigos = []
 let nuevoAmigo = 0
-/*
-let nuevoAmigo = prompt ('Ingresar nombre')
-amigos.push(nuevoAmigo)
-*/
-//amigos.push('Dana');
-
-
-
-
 
 
 function agregarAmigo(){    
@@ -22,13 +13,11 @@ function agregarAmigo(){
         let valorCaja = document.getElementById('amigo').value='';
         listarAmigos();
         return nuevoAmigo;
-    }
-    
+    }   
     
 }
 
-function listarAmigos(){
-    //console.log (`${amigos} desde listar amigos`)
+function listarAmigos(){    
     let listaHTML = document.getElementById('listaAmigos');
     listaHTML.innerHTML = '';
 
@@ -36,37 +25,27 @@ function listarAmigos(){
     let li = document.createElement('li');
     li.textContent = amigos[i];
     listaHTML.appendChild(li);
-
-    /*
-    console.log(amigos[i]+ ' desde for');
-    let listaHTML = document.querySelector ('li');
-    listaHTML.innerHTML = nuevoAmigo;
-    */
-
+    }
 }
 
 
 
-    /*
-    let lista = document.querySelector('li');
-    lista.innerHTML = nuevoAmigo
-   
-
-    for (let i = 0 ; i <amigos.length; i++); {
-        console.log(amigos[i].textContent + 'desde for');
-    }
-        */
+function sortearAmigo(){
     
-   /*
-    for (let i = 0; i < items.length; i++) {
-        console.log(items[i].textContent);
+    if (amigos.length == 0){
+        alert ("Escribe la lista de amigos para poder sortear");
+    }else{
+        let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+        let amigoSorteado = amigos[indiceAleatorio];
+        console.log("Amigo sorteado: " + amigoSorteado);
+        
+        let resultado = document.getElementById("resultado");
+        resultado.innerHTML = `Resultado: ${amigoSorteado}`
+        return amigoSorteado;
     }
-    */
-    /*
-    let lista = document.querySelector(li);
-    lista.innerHTML = nuevoAmigo;
-    return lista
-    */
-
 }
+
+
+
+
 
